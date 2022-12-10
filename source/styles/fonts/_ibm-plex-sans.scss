@@ -1,0 +1,15 @@
+@mixin ibm-plex-sans($name, $weight, $style) {
+  @font-face {
+    font-family: "IBM Plex Sans";
+
+    src:
+    url("/source/fonts/ibm-plex-sans/#{$name}.ttf?as=woff2") format("woff2"),
+    url("/source/fonts/ibm-plex-sans/#{$name}.ttf?as=woff") format("woff"),
+    url("/source/fonts/ibm-plex-sans/#{$name}.ttf") format("truetype");
+
+    font-weight: $weight;
+    font-style: $style;
+
+    font-display: swap;
+}
+}

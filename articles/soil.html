@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Плотность и порозность почвы – plant-pro</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/source/styles/main.scss">
+</head>
+<body>
+<div class="container">
+    <nav>
+        <ul class="nav-list">
+            <li class="nav-list__item">
+                <a href="/" class="nav-list__link nav-list__link_active">главная</a>
+            </li>
+
+            <li class="nav-list__item">
+                <a href="/articles/index.eta" class="nav-list__link">статьи</a>
+            </li>
+
+            <li class="nav-list__item">
+                <a href="/" class="nav-list__link">справочники</a>
+            </li>
+
+            <li class="nav-list__item">
+                <a href="/" class="nav-list__link">библиотека</a>
+            </li>
+
+            <li class="nav-list__item">
+                <a href="/" class="nav-list__link">апплеты</a>
+            </li>
+
+            <li class="nav-list__item">
+                <a href="/" class="nav-list__link">словарь</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1 class="page-title">Плотность и порозность почвы</h1>
+
+        <p class="main-content">
+            Почва является гетерогенной многофазной дисперсной системой, состоящей из трёх фаз:
+            твёрдой, жидкой и газообразной.
+            Обозначим объём почвы как `V_t`, тогда `V_s`, `V_w` и `V_(air)` - это объёмы твёрдой,
+            жидкой и газообразной фаз соответственно. Массы этих фаз обозначим как `m_s`, `m_w` и `m_(air)`.
+        </p>
+
+        <div class="content-row">
+            <p class="main-content">
+                <strong>Плотность твёрдой фазы почвы</strong> - это отношение массы твёрдой фазы почвы к объёму
+                твёрдой фазы:
+            </p>
+
+            <div class="content-note">
+                Плотность твёрдой фазы почвы также может обозначаться как `d` и может называться
+                собственно плотностью почвы, удельным весом твёрдой фазы.
+            </div>
+        </div>
+
+        <div class="formula">
+            <a class="content-action content-action_calculate"></a>
+            `rho_s = (m_s)/(V_s) [tt "г" / tt "см"^3]`
+        </div>
+
+        <div class="content-row">
+            <p class="main-content">
+                <strong>Плотность почвы</strong> - это отношение массы твёрдой фазы почвы к общему объёму почвы:
+                <span class="source-mark">1</span>
+            </p>
+
+            <div class="content-note">
+                Плотность почвы также может называться плотностью сложения, объёмной плотностью, объёмной
+                массой,
+                объёмным весом или удельным весом скелета почвы. Может обозначаться как `d_v`.
+            </div>
+        </div>
+
+        <div class="formula">
+            <a class="content-action content-action_calculate"></a>
+            `rho_b = (m_s)/(V_t) [tt "г" / tt "см"^3]`
+        </div>
+
+        <p class="main-content">
+            Плотность почвы это масса единицы объёма абсолютно сухой почвы в её естественном, ненарушенном
+            состоянии.
+            Плотность почвы является одним из основных, фундаментальных свойств почвы.
+        </p>
+
+        <p class="main-content main-content__accent">
+            Плотность почвы не
+            является
+            постоянной, а зависит от влажности почвы (в большей мере - для суглинистых и глинистых почв, в
+            меньшей -
+            для песчаных).
+        </p>
+
+        <p class="main-content">
+            Плотность естественной почвы никогда не может превышать 2 г/см<sup>3</sup>.
+            Минимальные значения минеральных почв редко бывают ниже 0.8 г/см<sup>3</sup>,
+            хотя плотность торфяных почв, торфов может снижаться и до 0.1 г/см<sup>3</sup>.
+        </p>
+    </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_HTMLorMML" async></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        messageStyle: "none"
+    });
+</script>
+</body>
+</html>

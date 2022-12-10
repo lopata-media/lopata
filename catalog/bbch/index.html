@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Коды BBCH: фазы роста и развития растений</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/source/styles/main.scss">
+</head>
+<body class="container">
+<main class="section">
+    <a href="/index.html" class="nav-previous">На главную</a>
+
+    <header class="main-content__heading">
+        <h1>Коды BBCH</h1>
+    </header>
+
+    <p class="main-content">
+        Расширенная BBCH-шкала это система для кодирования фенологически схожих страдий роста всех однодольных и
+        двудольных растений. Разработана комадной из различных научных учреждений Германии.
+        Десятичный код, разделённый на главные и дополнительные стадии роста, основан на широко известном коде для
+        злаков, разработанным Zadoks et al. (1974) для совместимости с этой широко используемой фенологической шкалой.
+    </p>
+
+    <label for="library-search" class="visually-hidden">Найти культуру</label>
+    <input type="search" class="search main-content" id="library-search" placeholder="Найти культуру" data-search-input/>
+
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap" data-search-items>
+        <a class="decorative-card" href="cereals.html">
+            Злаки
+            <span class="visually-hidden">
+                пшеница обыкновенная мягкая овёс посевной ячмень обыкновенный
+                triticum aestivum triticum durum avena sativa hordeum vulgare
+            </span>
+            <div class="decorative-card__image" style="background-image: url('https://storage.yandexcloud.net/storage-plant-pro/images/art/avena.jpg')"></div>
+        </a>
+
+        <a class="decorative-card" href="zea.html">
+            Кукуруза
+            <span class="visually-hidden">
+                zea mays
+            </span>
+            <div class="decorative-card__image" style="background-image: url('https://storage.yandexcloud.net/storage-plant-pro/images/art/zea.webp')"></div>
+        </a>
+
+        <a class="decorative-card" href="beans.html">
+            Фасоль
+            <div class="decorative-card__image" style="background-image: url('https://storage.yandexcloud.net/storage-plant-pro/images/art/phaseolus.png')"></div>
+        </a>
+    </div>
+
+    <script src="/source/scripts/search.ts" async></script>
+    <script async>
+        document.querySelectorAll(".decorative-card__image").forEach((element) => {
+            element.style.transition = "opacity 0.3s";
+        });
+    </script>
+</main>
+</body>
+</html>

@@ -1,0 +1,15 @@
+@mixin bitter($name, $weight, $style) {
+  @font-face {
+    font-family: Bitter;
+
+    src:
+      url("/source/fonts/bitter/#{$name}.ttf?as=woff2") format("woff2"),
+      url("/source/fonts/bitter/#{$name}.ttf?as=woff") format("woff"),
+      url("/source/fonts/bitter/#{$name}.ttf") format("truetype");
+
+    font-weight: $weight;
+    font-style: $style;
+
+    font-display: swap;
+  }
+}

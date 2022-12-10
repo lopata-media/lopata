@@ -1,0 +1,23 @@
+@import "../variables";
+
+.nav-list {
+  font-family: $display-font-family;
+
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+
+  margin: 3rem 0 0 0;
+  padding: 0;
+
+  list-style: none;
+
+  .nav-list__link {
+    color: $text-color;
+    text-decoration: none;
+
+    &.nav-list__link_active {
+      text-decoration: underline;
+  }
+}
+}

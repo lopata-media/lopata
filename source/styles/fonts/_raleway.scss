@@ -1,0 +1,15 @@
+@mixin raleway($name, $weight, $style) {
+  @font-face {
+    font-family: Raleway;
+
+    src:
+      url("/source/fonts/raleway/#{$name}.ttf?as=woff2") format("woff2"),
+      url("/source/fonts/raleway/#{$name}.ttf?as=woff") format("woff"),
+      url("/source/fonts/raleway/#{$name}.ttf") format("truetype");
+
+    font-weight: $weight;
+    font-style: $style;
+
+    font-display: swap;
+  }
+}

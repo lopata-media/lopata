@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/source/styles/main.scss">
+</head>
+<body class="container">
+<main class="section">
+    <a href="../index.html" class="nav-previous">На главную</a>
+
+    <header class="main-content__heading">
+        <h1>Библиотека</h1>
+    </header>
+
+    <div class="columns">
+        <div class="column is-half-desktop is-two-thirds-tablet">
+            <label for="library-search" class="visually-hidden">Найти книгу</label>
+            <input type="search" class="search" id="library-search" placeholder="Что вы ищете?" data-search-input/>
+
+    <%
+        const fs = await import("fs/promises");
+        const { parse } = await import("csv-parse");
+
+        const csv = await fs.readFile(`./library/catalog.csv`, { encoding: "utf-8" });
+
+        const entries = parse(csv, { columns: true });
+    %>
+
+    <ul class="card-list" data-search-items>
+    <% for await (const entry of entries) { %>
+        <li class="card-list-item">
+            <div class="card-list-item__title" data-search-target>
+            <%= entry["Название на языке оригинала"] %>
+            </div>
+
+            <span class="tag tag_<%= entry["Тип файла"] %>"><%= entry["Тип файла"] %></span>
+
+            <a class="card-action">
+                <img src="/source/images/icons/download.svg" height="16" width="16" alt="">
+                <span class="visually-hidden">Скачать</span>
+            </a>
+        </li>
+    <% } %>
+    </ul>
+        </div>
+    </div>
+
+    <script src="/source/scripts/search.ts" async></script>
+</main>
+</body>
+</html>
