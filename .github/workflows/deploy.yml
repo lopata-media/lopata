@@ -26,7 +26,7 @@ jobs:
           name: dist
       - run: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
       - run: unzip awscliv2.zip
-      - run: sudo ./aws/install
+      - run: sudo ./aws/install --update
       - run: aws configure set aws_access_key_id ${{ secrets.DEPLOY_KEY_ID }}
       - run: aws configure set aws_secret_access_key ${{ secrets.DEPLOY_KEY_SECRET }}
       - run: aws configure set default.region ru-central1
