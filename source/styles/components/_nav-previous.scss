@@ -1,0 +1,45 @@
+@import "../variables";
+
+.nav-previous {
+  padding: 0.25rem 0.5rem 0.25rem 1.75rem;
+
+  color: $text-color;
+  background-color: $panel-background-color;
+
+  border: $border;
+  border-radius: 0.25rem;
+
+  text-decoration: none;
+  outline: none;
+
+  transition: border-color .2s;
+
+  position: relative;
+
+  &:hover, &:focus {
+    border-color: $hover-border-color;
+    transition: border-color .2s;
+  }
+
+  &::before {
+    content: "";
+
+    display: block;
+    height: 1rem;
+    width: 1rem;
+
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background: {
+      color: transparent;
+      image: url("data-url:/source/images/icons/arrow-left.svg");
+      position: center;
+      size: cover;
+      repeat: no-repeat;
+    }
+  }
+}

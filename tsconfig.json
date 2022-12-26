@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "strict": true,
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   }
 }

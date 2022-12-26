@@ -18,39 +18,59 @@
     </header>
 
     <p class="main-content">
-        Расширенная BBCH-шкала это система для кодирования фенологически схожих страдий роста всех однодольных и
-        двудольных растений. Разработана комадной из различных научных учреждений Германии.
-        Десятичный код, разделённый на главные и дополнительные стадии роста, основан на широко известном коде для
-        злаков, разработанным Zadoks et al. (1974) для совместимости с этой широко используемой фенологической шкалой.
+        Нет ничего удивительного в том, что растение меняется со временем — оно растёт и развивается. Процессы, которые протекают внутри семени и во взрослом растении сильно различаются. Поэтому важно понимать, в какой фазе развития находится растение, если ты собираешься с ним работать (исследовать или выращивать).
+    </p>
+    <p class="main-content">
+        И тут у нас проблемка: разные виды растений развиваются разными путями. У пшеницы есть колос, а вот у подсолнуха его нет. С другой стороны, пшеница и овёс развиваются очень похоже.
+    </p>
+    <p class="main-content">
+        Чтобы говорить о развитии растений “на одном языке”, учёные придумали шкалы BBCH. Эти шкалы чётко описывают стадии роста множества популярных культур и широко используются за рубежом.
+    </p>
+    <p class="main-content">
+        <a href="#">По этой ссылке ты можешь узнать о шкалах BBCH больше.</a>
     </p>
 
     <label for="library-search" class="visually-hidden">Найти культуру</label>
-    <input type="search" class="search main-content" id="library-search" placeholder="Найти культуру" data-search-input/>
+    <input type="search" class="search main-content" id="library-search" placeholder="Найти культуру"
+           data-search-input/>
 
     <div style="display: flex; gap: 1rem; flex-wrap: wrap" data-search-items>
         <a class="decorative-card" href="cereals.html">
-            Злаки
-            <span class="visually-hidden">
+            <div class="decorative-card__overflow">
+                <span class="decorative-card__content">Злаки</span>
+                <span class="visually-hidden">
                 пшеница обыкновенная мягкая овёс посевной ячмень обыкновенный
                 triticum aestivum triticum durum avena sativa hordeum vulgare
             </span>
-            <div class="decorative-card__image" style="background-image: url('https://storage.yandexcloud.net/storage-plant-pro/images/art/avena.jpg')"></div>
+                <div class="decorative-card__image"
+                     style="background-image: url('https://storage.yandexcloud.net/storage-plant-pro/images/art/avena.jpg')"></div>
+            </div>
         </a>
 
         <a class="decorative-card" href="zea.html">
-            Кукуруза
-            <span class="visually-hidden">
-                zea mays
-            </span>
-            <div class="decorative-card__image" style="background-image: url('https://storage.yandexcloud.net/storage-plant-pro/images/art/zea.webp')"></div>
+            <div class="decorative-card__overflow">
+                <span class="decorative-card__content">Кукуруза</span>
+                <span class="visually-hidden">
+                    zea mays
+                </span>
+                <div class="decorative-card__image"
+                     style="background-image: url('https://storage.yandexcloud.net/storage-plant-pro/images/art/zea.webp')"></div>
+            </div>
         </a>
 
         <a class="decorative-card" href="beans.html">
-            Фасоль
-            <div class="decorative-card__image" style="background-image: url('https://storage.yandexcloud.net/storage-plant-pro/images/art/phaseolus.png')"></div>
+            <div class="decorative-card__overflow">
+                <span class="decorative-card__content">Фасоль</span>
+                <div class="decorative-card__image"
+                     style="background-image: url('https://storage.yandexcloud.net/storage-plant-pro/images/art/phaseolus.png')"></div>
+            </div>
         </a>
     </div>
+    <div class="hidden zero-search main-content" data-search-zero>
+        <b>Ой! По твоему запросу ничего не нашлось!</b>
 
+        <img src="/source/images/mushrooms.jpg" class="zero-search-image"/>
+    </div>
     <script src="/source/scripts/search.ts" async></script>
     <script async>
         document.querySelectorAll(".decorative-card__image").forEach((element) => {

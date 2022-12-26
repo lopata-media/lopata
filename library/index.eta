@@ -8,19 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="/source/styles/main.scss">
-</head>
-<body class="container">
-<main class="section">
-    <a href="../index.html" class="nav-previous">На главную</a>
-
-    <header class="main-content__heading">
-        <h1>Библиотека</h1>
-    </header>
-
-    <div class="columns">
-        <div class="column is-half-desktop is-two-thirds-tablet">
-            <label for="library-search" class="visually-hidden">Найти книгу</label>
-            <input type="search" class="search" id="library-search" placeholder="Что вы ищете?" data-search-input/>
 
     <%
         const fs = await import("fs/promises");
@@ -29,28 +16,64 @@
         const csv = await fs.readFile(`./library/catalog.csv`, { encoding: "utf-8" });
 
         const entries = parse(csv, { columns: true });
+
+        const arr = [];
+        for await (const entry of entries) {
+            arr.push(entry);
+        }
     %>
+</head>
+<body class="container">
+<main class="section">
+    <a href="../index.html" class="nav-previous">На главную</a>
+
+    <header class="main-content__heading">
+        <h1>Библиотека</h1>
+        <span>Книг в библиотеке: <%= arr.length %></span>
+    </header>
+
+    <div class="columns">
+        <div class="column is-half-desktop is-two-thirds-tablet">
+            <label for="library-search" class="visually-hidden">Найти книгу</label>
+            <input type="search" class="search" id="library-search" placeholder="Что вы ищете?" data-search-input/>
+
 
     <ul class="card-list" data-search-items>
-    <% for await (const entry of entries) { %>
-        <li class="card-list-item">
-            <div class="card-list-item__title" data-search-target>
-            <%= entry["Название на языке оригинала"] %>
+    <% for (const entry of arr) { %>
+        <li class="card-list-item" style="display: flex;gap: 1rem;">
+            <img src="/source/images/1.png" style="height: 100px;border-radius: 0.5rem"/>
+            <div>
+                <div class="card-list-item__title">
+                <%= entry["Название на языке оригинала"] %>
+                </div>
+
+                <p class="card-list-item__note">
+                    <%= entry["Авторы"] %>
+                </p>
+
+                <a class="button">
+                    <img src="/source/images/icons/download.svg" height="16" width="16" alt="">
+                    <span class="file-type file-type_pdf">pdf</span>
+                </a>
+
+                <a class="button">
+                    <img src="/source/images/icons/download.svg" height="16" width="16" alt="">
+                    <span class="file-type file-type_djvu">djvu</span>
+                </a>
             </div>
-
-            <span class="tag tag_<%= entry["Тип файла"] %>"><%= entry["Тип файла"] %></span>
-
-            <a class="card-action">
-                <img src="/source/images/icons/download.svg" height="16" width="16" alt="">
-                <span class="visually-hidden">Скачать</span>
-            </a>
         </li>
     <% } %>
     </ul>
+            <div class="hidden zero-search" data-search-zero>
+                <b>Ой! По твоему запросу ничего не нашлось!</b>
+
+                <img src="/source/images/mushrooms.jpg" class="zero-search-image"/>
+            </div>
+
         </div>
     </div>
 
-    <script src="/source/scripts/search.ts" async></script>
+    <script src="/source/scripts/search.ts"></script>
 </main>
 </body>
 </html>
