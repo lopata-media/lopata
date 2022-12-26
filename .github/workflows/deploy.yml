@@ -1,0 +1,33 @@
+on: [push]
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - run: npm ci
+      - run: npm run build
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist
+  deploy:
+    needs: compile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+      - run: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      - run: unzip awscliv2.zip
+      - run: sudo ./aws/install
+      - run: aws configure set aws_access_key_id ${{ secrets.DEPLOY_KEY_ID }}
+      - run: aws configure set aws_secret_access_key ${{ secrets.DEPLOY_KEY_SECRET }}
+      - run: aws configure set default.region ru-central1
+      - run: aws --endpoint-url=https://storage.yandexcloud.net s3 cp --recursive ./dist s3://lopata.media

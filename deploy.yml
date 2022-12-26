@@ -1,0 +1,5 @@
+commands:
+  - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+  - unzip awscliv2.zip
+  - sudo ./aws/install
+  - aws --endpoint-url=https://storage.yandexcloud.net s3 cp --recursive ./dist s3://lopata.media

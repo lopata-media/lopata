@@ -5,6 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "npx parcel build index.html --target default",
     "dev": "npx parcel serve index.html --target default",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
