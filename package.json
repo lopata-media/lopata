@@ -37,6 +37,7 @@
     "parcel-transformer-ejs": "^1.0.0",
     "parcel-transformer-eta": "^1.0.0",
     "parcel-transformer-etajs": "^1.0.1",
+    "parcel-transformer-fonts": "^1.1.3",
     "parcel-transformer-ignore": "^1.0.3",
     "process": "^0.11.10",
     "querystring-es3": "^0.2.1",
@@ -55,7 +56,6 @@
     "@linways/table-to-excel": "^1.0.4",
     "@parcel/plugin": "^2.6.2",
     "file-saver": "^2.0.5",
-    "izitoast": "^1.4.0",
-    "parcel-transformer-fonts": "^1.1.2"
+    "izitoast": "^1.4.0"
   }
 }
